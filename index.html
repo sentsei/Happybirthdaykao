@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="hearts-container"></div>
+    <div id="confetti-container"></div>
+
+    <div class="container">
+        <section id="page-1" class="page active">
+            <div class="card lock-card heart-theme">
+                <div class="heart-lock">💝</div>
+                <h2>Secret Box</h2>
+                <p>may pin ito para bukasn</p>
+                <div class="pin-display">
+                    <input type="password" id="pin-input" readonly placeholder="••••">
+                </div>
+                <div class="keypad">
+                    <button onclick="pressKey('1', event)">1</button>
+                    <button onclick="pressKey('2', event)">2</button>
+                    <button onclick="pressKey('3', event)">3</button>
+                    <button onclick="pressKey('4', event)">4</button>
+                    <button onclick="pressKey('5', event)">5</button>
+                    <button onclick="pressKey('6', event)">6</button>
+                    <button onclick="pressKey('7', event)">7</button>
+                    <button onclick="pressKey('8', event)">8</button>
+                    <button onclick="pressKey('9', event)">9</button>
+                    <button onclick="clearPin(event)" class="btn-clear">C</button>
+                    <button onclick="pressKey('0', event)">0</button>
+                    <button onclick="checkPin(event)" class="btn-enter">✔</button>
+                </div>
+                <p id="error-msg" class="error-text"></p>
+            </div>
+        </section>
+
+        <section id="page-2" class="page">
+            <div class="card hbd-card">
+                <div class="floating-cake">🎂</div>
+                <h1 class="glow-text">Happy Birthday!</h1>
+                <h2 class="celebrant-name">our baby kaoeee ❤️</h2>
+                <p class="subtext">this is the day you've born little princess.</p>
+            </div>
+        </section>
+
+        <section id="page-3" class="page">
+            <div class="card letter-card">
+                <h2 class="title-special">Liham Para Sayo</h2>
+                <div class="letter-content">
+                    <p>Mahal Naming KOEEE,</p>
+                    <p>Gusto lang namin sabihin na Happy Happy Birthday! sobrang thankful namin na nakilala ka 
+                      namin sana maging masaya at maganda ang araw mong ito kase its your time to shineeee HAHA de joke,Yung mga kulitan at kasiyahan nating lahat sa codm ay sana wag mong kalimutan.</p>
+                    <p>At Sana laging kang masaya at healthy. Nandito lang kaming lahat para suportahan ka sa lahat ng pangarap mo. Huwag kang magbabago ha?</p>
+                    <p>Ikaw ang sunshine namin at little pretty baby HAHAHAH  . Enjoy your day! KAOO :></p>
+                    <p class="signature">Nagmamahal HELIX KIN CLAN</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-4" class="page">
+            <div class="card wishes-card">
+                <h2 class="title-special">MENSAHE NG HELIX KIN ✨</h2>
+                <div class="wishes-grid">
+                    <div class="wish-box">
+                        <p>"Happy birthday kristine kaoi na kaikai:>> hehe wag kana magalit sa kaikai typo lang yan tas galing
+                            rin sa name mo hehe pakabait ka palagi at enjoy kalang🥳🥳 pakak bunso."</p>
+                        <span>- mickey</span>
+                      <div class="wish-box">
+                        <p>"hii kaooo this is your dayyy na HAHAH i just wanna say happy happy birthday sayo sana nasa good health ka at
+                          Naka focus ka sayong future, andito lang kami para supportahan ka palagi kung need mo ng tulong andito lang din kamii maasahan mo kami sa lahat ng need mo 
+                          wag araw araw minsan busy din kame WHAHHAHA basta more birthday wish to come and sana matupad mo yung future dream mo🫶🫶❤️ happy birthday kaooo"</p>
+                        <span>- Dib </span>
+                      </div>
+                    </div>
+                    <div class="wish-box">
+                        <p>"hii kaoeeeee #kaaway lagi #bestprend #minion Haha bday wish ko sayo is sana maging healty ka at sana matupad mo lahat lahat ng wish mo 
+                            and sa future mo yun lang happy birthday"</p>
+                        <span>- kochie</span>
+                    </div>
+                    <div class="wish-box">
+                        <p>"hiii kaoooo dahill birthday mo ngayon libreng battle pass ka sakin, wish ko muna sayo is magpakabait ka focus ka lang sa future mo at makapag tapos ka ng pag aaral 
+                            yun lang kaoeee wee love you💙."</p>
+                        <span>- madam/athena</span>
+                    </div>
+                    <div class="wish-box">
+                        <p>"  wish ko sayo kao is good health, safety and sana matupad mga pangarap nya sa buhay, and maging stable sya financial in the
+                            future!"</p>
+                        <span>- papajay</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="nav-controls" class="nav-container hidden">
+            <button id="prev-btn" onclick="navigatePage(-1)">Back</button>
