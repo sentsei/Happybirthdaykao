@@ -1,0 +1,165 @@
+:root {
+    --heart-pink: #ff4d6d;
+    --heart-red: #ff758f;
+    --heart-dark: #590d22;
+    --glass: rgba(255, 255, 255, 0.1);
+    --neon-blue: #00f2fe;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+    background: #1a0006; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+
+#hearts-container, #confetti-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    color: var(--heart-pink);
+    font-size: 20px;
+    animation: floatUp linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+
+.click-heart-effect {
+    position: fixed;
+    pointer-events: none;
+    font-size: 24px;
+    z-index: 9999;
+    animation: popHeart 0.6s ease-out forwards;
+}
+
+@keyframes popHeart {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+    50% { opacity: 1; }
+    100% { transform: translate(-50%, -80px) scale(1.6); opacity: 0; }
+}
+
+
+.confetti {
+    position: absolute;
+    width: 10px; height: 10px;
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0.7; }
+}
+
+
+.container { position: relative; z-index: 10; width: 100%; max-width: 450px; padding: 20px; }
+
+.card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.page { display: none; }
+.page.active { display: block; }
+
+
+.card.heart-theme {
+    background: rgba(89, 13, 34, 0.3); 
+    border: 1px solid rgba(255, 117, 143, 0.3);
+    box-shadow: 0 20px 40px rgba(255, 77, 109, 0.2);
+}
+.heart-lock {
+    font-size: 60px;
+    margin-bottom: 5px;
+    animation: heartbeat 1.5s infinite;
+    filter: drop-shadow(0 0 10px var(--heart-pink));
+}
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+.heart-theme h2 { color: #fff; font-weight: 800; letter-spacing: 1px; margin-bottom: 5px;}
+.heart-theme p { color: var(--heart-red); font-size: 0.9rem; margin-bottom: 15px;}
+
+.heart-theme .pin-display input {
+    width: 100%; background: rgba(0,0,0,0.4);
+    border: 2px solid var(--heart-pink);
+    padding: 12px; border-radius: 15px;
+    text-align: center; color: #fff;
+    font-size: 25px; letter-spacing: 10px; margin-bottom: 15px;
+    box-shadow: inset 0 0 10px rgba(255,77,109,0.3);
+}
+.heart-theme .keypad button {
+    padding: 15px; border-radius: 15px; border: none;
+    background: rgba(255, 77, 109, 0.15); 
+    color: white; font-weight: 600;
+    font-size: 20px; cursor: pointer; transition: 0.2s;
+    border: 1px solid rgba(255,77,109,0.2);
+}
+.heart-theme .keypad button:hover { 
+    background: var(--heart-pink); 
+    box-shadow: 0 0 15px var(--heart-pink);
+    transform: scale(1.05);
+}
+.heart-theme .keypad .btn-clear { background: rgba(0, 0, 0, 0.3); }
+.heart-theme .keypad .btn-enter { background: rgba(255, 117, 143, 0.4); }
+.error-text { color: #ff4a4a; margin-top: 10px; font-weight: bold; font-size: 0.9rem;}
+
+
+.floating-cake { font-size: 80px; animation: bounce 2s infinite; }
+.glow-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px; margin: 10px 0;
+    background: linear-gradient(to right, #ff0077, #7722ff, #00f2fe);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+.title-special { color: var(--neon-blue); margin-bottom: 15px; font-family: 'Dancing Script', cursive; font-size: 35px; }
+.letter-content { text-align: left; line-height: 1.6; max-height: 300px; overflow-y: auto; padding-right: 10px; }
+.signature { text-align: right; margin-top: 20px; font-family: 'Dancing Script', cursive; color: var(--heart-pink); font-size: 25px; }
+
+.wishes-grid { display: flex; flex-direction: column; gap: 12px; max-height: 350px; overflow-y: auto; }
+.wish-box { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 15px; border-left: 5px solid #7722ff; text-align: left; }
+.wish-box span { display: block; margin-top: 5px; color: var(--neon-blue); font-weight: bold; font-size: 13px; }
+
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+.nav-container button {
+    background: white; color: black; border: none;
+    padding: 10px 25px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+.nav-container button:disabled { opacity: 0.3; cursor: not-allowed; }
+.page-indicator { font-weight: 600; background: rgba(0,0,0,0.4); padding: 5px 15px; border-radius: 20px; }
+.hidden { display: none !important; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+
+
